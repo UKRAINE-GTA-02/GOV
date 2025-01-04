@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Calculator</title>
+    <title>Калькулятор податків | UKRAINE GTA 02</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -35,7 +35,7 @@
             margin-bottom: 5px;
         }
         .input-group input {
-            width: 100%;
+            width: 95%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -64,53 +64,52 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Tax Calculator</h1>
-        <div class="input-group">
-            <label for="field1">Amount 1:</label>
-            <input type="number" id="field1" step="0.01">
-        </div>
-        <div class="input-group">
-            <label for="field2">Amount 2:</label>
-            <input type="number" id="field2" step="0.01">
-        </div>
-        <div class="input-group">
-            <label for="field3">Amount 3:</label>
-            <input type="number" id="field3" step="0.01">
-        </div>
-        <div class="input-group">
-            <label for="field4">Amount 4:</label>
-            <input type="number" id="field4" step="0.01">
-        </div>
-        <div class="input-group">
-            <label for="field5">Amount 5:</label>
-            <input type="number" id="field5" step="0.01">
-        </div>
-        <div class="input-group">
-            <label for="field6">Amount 6:</label>
-            <input type="number" id="field6" step="0.01">
-        </div>
-        <button onclick="calculateTax()">Calculate</button>
-        <div id="result" class="result" style="display: none;"></div>
+<div class="container">
+    <h1>Калькулятор податків</h1>
+    <div class="input-group">
+        <label for="field1">Значення #1:</label>
+        <input type="number" id="field1" step="0.01">
     </div>
+    <div class="input-group">
+        <label for="field2">Значення #2:</label>
+        <input type="number" id="field2" step="0.01">
+    </div>
+    <div class="input-group">
+        <label for="field3">Значення #3:</label>
+        <input type="number" id="field3" step="0.01">
+    </div>
+    <div class="input-group">
+        <label for="field4">Значення #4:</label>
+        <input type="number" id="field4" step="0.01">
+    </div>
+    <div class="input-group">
+        <label for="field5">Значення #5:</label>
+        <input type="number" id="field5" step="0.01">
+    </div>
+    <div class="input-group">
+        <label for="field6">Значення #6:</label>
+        <input type="number" id="field6" step="0.01">
+    </div>
+    <button onclick="calculateTax()">Обчислити</button>
+    <div id="result" class="result" style="display: none;"></div>
+</div>
 
-    <script>
-        function calculateTax() {
-            // Get input values
-            let total = 0;
-            for (let i = 1; i <= 6; i++) {
-                const value = parseFloat(document.getElementById(`field${i}`).value) || 0;
-                total += value;
-            }
-
-            // Calculate tax (20%)
-            const tax = total * 0.2;
-
-            // Display result
-            const resultDiv = document.getElementById('result');
-            resultDiv.style.display = 'block';
-            resultDiv.innerText = `Total: $${total.toFixed(2)}, Tax (20%): $${tax.toFixed(2)}`;
+<script>
+    function calculateTax() {
+        let total = 0;
+        for (let i = 1; i <= 6; i++) {
+            const value = parseFloat(document.getElementById(`field${i}`).value) || 0;
+            total += value;
         }
-    </script>
+
+        const tax = total * 0.1;
+
+        // Display result
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        resultDiv.innerText = `Сума доходу: ${total.toFixed(0)}₴\nПодаток (10%): ${tax.toFixed(0)}₴`;
+        // by O.Halytskyi
+    }
+</script>
 </body>
 </html>
