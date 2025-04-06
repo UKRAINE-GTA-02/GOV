@@ -102,12 +102,12 @@
             total += value;
         }
 
-        const tax = total * 0.05;
+        const tax = total * 0.1;
 
         // Display result
         const resultDiv = document.getElementById('result');
         resultDiv.style.display = 'block';
-        resultDiv.innerText = `Сума доходу: ${total.toFixed(0)}₴\nПодаток (5%): ${tax.toFixed(0)}₴`;
+        resultDiv.innerText = `Сума доходу: ${total.toFixed(0)}₴\nПодаток (10%): ${tax.toFixed(0)}₴`;
         // by O.Halytskyi
     }
 </script>
